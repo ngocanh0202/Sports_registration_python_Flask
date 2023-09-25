@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <table style="margin: 0 auto; border-spacing: 0px;">
+        <thead>
+            <tr style="background-color: aqua;">
+                <td>
+                    Information
+                </td>
+                <td>
+                    Action
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for re in register %}
+            <tr>
+                
+                    <td>{{re[0]}} has registered the name sport {{re[1]}}</td>
+                    <td>
+                        <form action="/delete_one_registrant" method="post">
+                            <button type="submit" name="name" value="{{re[0]}}" >delete</button>
+                        </form>   
+                    </td>
+            </tr>
+            {% endfor %}
+        </tbody>         
+    </table>
+    
+    <a href="/">Back default</a>
+{% endblock %}

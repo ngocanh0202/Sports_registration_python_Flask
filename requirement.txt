@@ -1,0 +1,2 @@
+user registers  the sport 
+Display list of user registered

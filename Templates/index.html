@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus placeholder="enter name" name="name" type="text" >
+        <select name="Sport">
+            <option disabled selected>Sport</option>
+            {% for s in sports %}
+                <option value="{{s}}"> {{s}} </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Register</button>
+    </form>
+    <a href="/informdelete"> delete from list of registants</a>
+    <br/>
+    <a href="/registants">Display list registants</a>
+    <br/>
+    <a href="/search">Search</a>
+{% endblock %}

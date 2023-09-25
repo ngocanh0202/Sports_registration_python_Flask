@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Search name who are registered </h1><input type="search" id="search_name" placeholder="search" autocomplete="off" autofocus >
+    <ul style="list-style: none;"></ul>
+    <script src="{{ url_for('static', filename='javascipt/search.js') }}">
+    </script>
+
+{% endblock %}
