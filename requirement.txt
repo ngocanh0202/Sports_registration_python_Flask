@@ -1,2 +1,9 @@
+---Describe the database----
+create table register(
+    name nvarchar,
+    sport nvarchar
+)
+
 user registers  the sport 
 Display list of user registered
+search user who are registered
