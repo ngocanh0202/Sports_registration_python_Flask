@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, jsonify
 from waitress import serve
 from connect_database import select_database, execute_database
 app = Flask(__name__)
@@ -64,8 +64,9 @@ def tool_search():
     if not name:
         list_name = []
     else:
-        list_name = select_database("select * from register where name like ? ", ("%" +name+"%",))
-    return render_template("tool_search.html", list_name = list_name)
+        list_name = select_database("select * from register where name like (?) ", ("%" +name+"%",))
+    json_data = jsonify(list_name)
+    return json_data
 
 mode = 'dev'
 if __name__ == '__main__':
